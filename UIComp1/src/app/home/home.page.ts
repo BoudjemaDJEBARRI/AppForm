@@ -1,4 +1,5 @@
 import { Component } from '@angular/core';
+import { NewsService } from '../news.service';
 
 @Component({
   selector: 'app-home',
@@ -6,7 +7,14 @@ import { Component } from '@angular/core';
   styleUrls: ['home.page.scss'],
 })
 export class HomePage {
+  newsData: any;
 
-  constructor() {}
-
+  constructor(private newsService: NewsService) {
+    this.loadNews();
+  }
+  loadNews() {
+    this.newsService.getNews().subscribe(data => {
+      this.newsData = data.articles;
+    });
+  }
 }

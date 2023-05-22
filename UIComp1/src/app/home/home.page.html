@@ -1,4 +1,27 @@
-<ion-header [translucent]="true">
+<ion-header>
+  <ion-toolbar>
+    <ion-title>
+      Home
+    </ion-title>
+  </ion-toolbar>
+</ion-header>
+<ion-content>
+  <ion-list>
+    <ion-item *ngFor="let article of newsData">
+      <ion-thumbnail slot="start">
+        <img [src]="article.urlToImage">
+      </ion-thumbnail>
+      <ion-label>
+        <h2>{{ article.title }}</h2>
+        <p>{{ article.description }}</p>
+      </ion-label>
+    </ion-item>
+  </ion-list>
+  <ion-button routerLink="/login" expand="block">Go to Login</ion-button>
+</ion-content>
+
+
+<!-- <ion-header [translucent]="true">
   <ion-toolbar>
     <ion-title>
       Blank space
@@ -16,7 +39,7 @@
   <div id="container">
     <strong>Ready to create an app?</strong>
     <p>Start with Ionic <a target="_blank" rel="noopener noreferrer" href="https://ionicframework.com/docs/components">UI Components</a></p>
-    <app-form></app-form>
+ 
 
   </div>
-</ion-content>
+</ion-content> -->
