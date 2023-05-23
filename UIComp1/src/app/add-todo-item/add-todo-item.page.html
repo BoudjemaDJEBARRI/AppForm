@@ -1,0 +1,32 @@
+<!-- <ion-header [translucent]="true">
+  <ion-toolbar>
+    <ion-title>AddTodoItem</ion-title>
+  </ion-toolbar>
+</ion-header>
+
+<ion-content [fullscreen]="true">
+  <ion-header collapse="condense">
+    <ion-toolbar>
+      <ion-title size="large">AddTodoItem</ion-title>
+    </ion-toolbar>
+  </ion-header>
+</ion-content> -->
+
+<ion-header>
+  <ion-toolbar>
+    <ion-title>Add Todo Item</ion-title>
+  </ion-toolbar>
+</ion-header>
+
+<ion-content>
+  <form #todoForm="ngForm">
+    <ion-item>
+      <ion-label floating>Todo Item</ion-label>
+      <ion-input type="text" name="todoItem" [(ngModel)]="todoItem" required></ion-input>
+    </ion-item>
+
+    <div padding>
+      <button ion-button color="primary" block [disabled]="!todoForm.valid" (click)="save()">Save</button>
+    </div>
+  </form>
+</ion-content>

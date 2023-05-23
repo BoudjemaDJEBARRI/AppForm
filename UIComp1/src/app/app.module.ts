@@ -6,9 +6,13 @@ import { IonicModule, IonicRouteStrategy } from '@ionic/angular';
 
 import { AppComponent } from './app.component';
 import { AppRoutingModule } from './app-routing.module';
+import { AddTodoItemPage } from './add-todo-item/add-todo-item.page';
 
 @NgModule({
-  declarations: [AppComponent],
+  declarations: [
+    AppComponent,
+    // AddTodoItemPage,
+  ],
   // entryComponents: [],
   imports: [
     BrowserModule, 
@@ -18,5 +22,8 @@ import { AppRoutingModule } from './app-routing.module';
   ],
   providers: [{ provide: RouteReuseStrategy, useClass: IonicRouteStrategy }],
   bootstrap: [AppComponent],
+  exports: [
+    // AddTodoItemPage,
+  ]
 })
 export class AppModule {}

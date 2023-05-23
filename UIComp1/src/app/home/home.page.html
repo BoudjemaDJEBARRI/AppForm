@@ -5,7 +5,9 @@
     </ion-title>
   </ion-toolbar>
 </ion-header>
+
 <ion-content>
+  
   <ion-list>
     <ion-item *ngFor="let article of newsData">
       <ion-thumbnail slot="start">
@@ -17,7 +19,9 @@
       </ion-label>
     </ion-item>
   </ion-list>
+
   <ion-button routerLink="/login" expand="block">Go to Login</ion-button>
+  
 </ion-content>
 
 
